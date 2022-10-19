@@ -69,7 +69,7 @@ const AddTodo = ({
         text: inputValue,
         completed: false,
       }
-      setTodos([newObj, ...todos])
+      setTodos([...todos, newObj])
 
       // 清空原本的文字輸入框
       setInputValue('')
@@ -94,25 +94,12 @@ const AddTodo = ({
   }
   const onDragEnd = (result) => {
     const { source, destination } = result
-
-    // 如果目的地都沒變就跳出
-    if (
-      source.droppableId === destination.droppableId &&
-      source.index === destination.index
-    ) {
-      return
-    }
-
-    // 製作新的 items
-    const newTodos = [...todos]
-
-    // 把兩個索引的值對調，相當於 [a, b] = [b, a]
-    ;[newTodos[source.index], newTodos[destination.index]] = [
-      newTodos[destination.index],
-      newTodos[source.index],
-    ]
-
-    // 設定新的 items
+    if (!destination) return
+    if (destination.index === source.index) return
+    let newTodos = [...todos]
+    let add = newTodos[source.index]
+    newTodos.splice(source.index, 1)
+    newTodos.splice(destination.index, 0, add)
     setTodos(newTodos)
     setDragStart(false)
   }
