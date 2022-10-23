@@ -1,5 +1,5 @@
 # Clnder-Todo
-結合日曆和Todolist，讓使用者能依照日期管理自己的工作清單。 
+結合日曆和Todolist，讓使用者能依照日期管理自己的工作清單。  
 💡點此開啟[Git Page](https://yenquan0528.github.io/calendar_todo/) 
 
 ## 使用技術：
