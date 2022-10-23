@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import TodoItem from './TodoItem'
 import { Draggable, DragDropContext, Droppable } from 'react-beautiful-dnd'
@@ -15,7 +15,9 @@ const AddTodo = ({
   const { event } = info
   // 文字輸入框用state
   const [inputValue, setInputValue] = useState('')
-  const [titleValue, setTitleValue] = useState(event ? event.title : '')
+  const [titleValue, setTitleValue] = useState(
+    event === undefined ? '' : event.title === 'Untitled' ? '' : event.title
+  )
   const [dragStart, setDragStart] = useState(false)
 
   //新增Event
