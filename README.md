@@ -3,7 +3,7 @@
   
 💡點此開啟[Git Page](https://yenquan0528.github.io/calendar_todo/) 
 
-## 使用技術：
+## 使用技術/套件：
 * [React](https://zh-hant.reactjs.org/)
 * [SCSS](https://sass-lang.com/)
 * [FullCalendar](https://fullcalendar.io/)
